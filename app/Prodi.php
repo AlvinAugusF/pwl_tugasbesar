@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Prodi extends Model
 {
-    protected $table = 'l_genre';
+    protected $table = 'prodi';
 
     protected $fillable = [
-        'name'
+        'nama'
     ];
 }

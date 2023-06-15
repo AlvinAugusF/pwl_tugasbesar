@@ -21,14 +21,14 @@
 </head>
 
 <body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            {{config('app.name')}}
-        </div>
-        
-        @yield('content')
+<div class="login-box">
+    <div class="login-logo">
+        {{config('app.name')}}
     </div>
-    <!-- /.login-box -->
+
+    @yield('content')
+</div>
+<!-- /.login-box -->
 </body>
 
 </html>

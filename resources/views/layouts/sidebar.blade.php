@@ -31,12 +31,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('genreList')}}" class="nav-link">
-                        <i class="nav-icon fa fa-dashboard"></i>
-                        <p>Genre Management</p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <form id="logout-form" action="{{route('logout')}}" method="post">
                         @csrf
                     </form>
