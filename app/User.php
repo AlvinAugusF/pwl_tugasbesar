@@ -2,22 +2,21 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'l_user';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'prodi', 'role'
+        'name', 'username', 'password', 'role'
     ];
 
     /**

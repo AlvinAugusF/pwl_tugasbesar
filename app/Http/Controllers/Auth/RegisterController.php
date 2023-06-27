@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use App\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -49,13 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'id' => ['required', 'string', 'max:10'],
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:l_user'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'prodi' => ['required', 'integer', 'max:11'],
-            'role' => ['required', 'string', 'max:10'],
-
         ]);
     }
 
@@ -71,8 +68,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'prodi' => $data['prodi'],
-            'role' => $data['role']
         ]);
     }
 }
